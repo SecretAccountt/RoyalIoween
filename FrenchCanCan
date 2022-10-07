@@ -10,7 +10,7 @@
 
 local metab = Instance.new("ScreenGui")
 metab.Name = "METAB"
-metab.Parent = workspace
+metab.Parent = game.CoreGui
 
 local design = Instance.new("Folder")
 design.Name = "DESIGN"
