@@ -1,7 +1,16 @@
+--[[
+	Roblox2Lua
+	----------
+	
+	This code was generated using
+	Deluct's Roblox2Lua plugin.
+]]--
+
+--// Instances
 
 local metab = Instance.new("ScreenGui")
-metab.Name = "                                                                                                                       "
-metab.Parent = game.CoreGui
+metab.Name = "METAB"
+metab.Parent = workspace
 
 local design = Instance.new("Folder")
 design.Name = "DESIGN"
@@ -1126,7 +1135,7 @@ task.spawn(function()
 		return oldreq(target)
 	end
 
-	local text = "Update : 28/09/22"
+	local text = "Update : 07/10/22"
 	
 	
 	for i = 1, #text do
