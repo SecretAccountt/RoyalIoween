@@ -1,4 +1,5 @@
 
+
 local metab = Instance.new("ScreenGui")
 metab.Name = "METAB"
 metab.Parent = game.CoreGui
@@ -33,7 +34,6 @@ box.Name = "BOX"
 box.Parent = acceuille
 
 local twitchbox = Instance.new("TextBox")
-twitchbox.CursorPosition = -1
 twitchbox.Font = Enum.Font.SourceSansBold
 twitchbox.Text = "COMING SOON"
 twitchbox.TextColor3 = Color3.new(1, 1, 1)
@@ -49,7 +49,6 @@ local uicorner = Instance.new("UICorner")
 uicorner.Parent = twitchbox
 
 local fr = Instance.new("TextBox")
-fr.CursorPosition = -1
 fr.Font = Enum.Font.SourceSansBold
 fr.Text = "FRENCH CANCAN"
 fr.TextColor3 = Color3.new(1, 1, 1)
@@ -70,7 +69,6 @@ local local_script_2 = Instance.new("LocalScript")
 local_script_2.Parent = fr
 
 local youtubebox = Instance.new("TextBox")
-youtubebox.CursorPosition = -1
 youtubebox.Font = Enum.Font.SourceSansBold
 youtubebox.Text = "qK5R4EUfvU"
 youtubebox.TextColor3 = Color3.new(1, 1, 1)
@@ -476,7 +474,6 @@ dgrader.Name = "Dégrader"
 dgrader.Parent = base
 
 local script_2 = Instance.new("ScrollingFrame")
-script_2.CanvasPosition = Vector2.new(0, 3.7710437774658203)
 script_2.HorizontalScrollBarInset = Enum.ScrollBarInset.ScrollBar
 script_2.ScrollBarImageTransparency = 1
 script_2.ScrollBarThickness = 10
@@ -703,11 +700,6 @@ image_label.BackgroundTransparency = 1
 image_label.Position = UDim2.new(0, 0, 0.033239238, 0)
 image_label.Size = UDim2.new(0, 197, 0, 325)
 image_label.Parent = script_2
-
-local halloween_kittyin_pumpkin = Instance.new("Decal")
-halloween_kittyin_pumpkin.Texture = "http://www.roblox.com/asset/?id=5775896555"
-halloween_kittyin_pumpkin.Name = "Halloween Kitty in Pumpkin"
-halloween_kittyin_pumpkin.Parent = base
 
 local local_script_6 = Instance.new("LocalScript")
 local_script_6.Parent = base
@@ -1456,15 +1448,15 @@ task.spawn(function()
 			
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-610.424, 101.467, -770.815)
 	
-			_G.Bin = true
-			while _G.Bin do
-				wait(1)
+			game:GetService"RunService".RenderStepped:Connect(function()
+	wait()
 				for i,v in pairs(game.Workspace.AppleBobbing:GetDescendants()) do -- get workspace and his dependencies
 					if v.Name == "Attachment" then -- replace "SubMachine Gun" with the object you want to fire the prompt
 						fireproximityprompt(v.ProximityPrompt) -- fires the prompt inside of the object ( make sure your object has a proximityprompt )
 					end
 				end
-			end
+			end)
+	
 	
 	
 		else
@@ -1473,17 +1465,16 @@ task.spawn(function()
 			script.Parent.Enabled.Value = false
 	
 	
-			_G.Bin = false
-			while _G.Bin do
-				wait(1)
-				for i,v in pairs(game.Workspace.AppleBobbing:GetDescendants()) do -- get workspace and his dependencies
-					if v.Name == "Attachment" then -- replace "SubMachine Gun" with the object you want to fire the prompt
-						fireproximityprompt(v.ProximityPrompt) -- fires the prompt inside of the object ( make sure your object has a proximityprompt )
-					end
-				end
+	
+			local tpservice= game:GetService("TeleportService")
+			local plr = game.Players.LocalPlayer
+	
+			tpservice:Teleport(game.PlaceId, plr)
+					
+				
 			end
 	
-		end
+		
 	end)
 	
 end)
