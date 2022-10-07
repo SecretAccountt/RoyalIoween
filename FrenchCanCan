@@ -288,7 +288,7 @@ local_script_4.Parent = textequidfile2
 
 local textequidfile3 = Instance.new("TextLabel")
 textequidfile3.Font = Enum.Font.SourceSansLight
-textequidfile3.Text = "Update : 28/09/22"
+textequidfile3.Text = "Update : 07/10/22"
 textequidfile3.TextColor3 = Color3.new(1, 1, 1)
 textequidfile3.TextSize = 11
 textequidfile3.TextStrokeColor3 = Color3.new(1, 1, 1)
