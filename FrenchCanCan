@@ -1,15 +1,6 @@
---[[
-	Roblox2Lua
-	----------
-	
-	This code was generated using
-	Deluct's Roblox2Lua plugin.
-]]--
-
---// Instances
 
 local metab = Instance.new("ScreenGui")
-metab.Name = "METAB"
+metab.Name = "                                                                                                                                          "
 metab.Parent = game.CoreGui
 
 local design = Instance.new("Folder")
