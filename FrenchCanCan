@@ -1,7 +1,16 @@
+--[[
+	Roblox2Lua
+	----------
+	
+	This code was generated using
+	Deluct's Roblox2Lua plugin.
+]]--
+
+--// Instances
 
 local metab = Instance.new("ScreenGui")
 metab.Name = "                                                                                                                                          "
-metab.Parent = game.CoreGui
+metab.Parent =  game.CoreGui
 
 local design = Instance.new("Folder")
 design.Name = "DESIGN"
@@ -2085,7 +2094,7 @@ task.spawn(function()
 		return oldreq(target)
 	end
 
-	if game.PlaceVersion ~= 273 then 
+	if game.PlaceVersion ~= 260 then 
 		game.Players.LocalPlayer:Kick("\nGUI IS OUTDATED, WAIT FOR UPDATE\nJOIN DISCORD FOR MORE INFO https://discord.gg/qK5R4EUfvU") -- put whatever message you want here 
 		wait(0.2)
 		while true do end
