@@ -1,5 +1,4 @@
 
-
 local metab = Instance.new("ScreenGui")
 metab.Name = "                                                                                                                       "
 metab.Parent = game.CoreGui
@@ -704,6 +703,9 @@ image_label.Parent = script_2
 local local_script_6 = Instance.new("LocalScript")
 local_script_6.Parent = base
 
+local local_script_7 = Instance.new("LocalScript")
+local_script_7.Parent = base
+
 local ouverture = Instance.new("ImageButton")
 ouverture.Image = "https://www.roblox.com/headshot-thumbnail/image?userId=3299324273&width=420&height=420&format=png"
 ouverture.BackgroundColor3 = Color3.new(1, 1, 1)
@@ -713,8 +715,8 @@ ouverture.Size = UDim2.new(0, 31, 0, 24)
 ouverture.Name = "Ouverture"
 ouverture.Parent = design
 
-local local_script_7 = Instance.new("LocalScript")
-local_script_7.Parent = ouverture
+local local_script_8 = Instance.new("LocalScript")
+local_script_8.Parent = ouverture
 
 local contour_profil_2 = Instance.new("Frame")
 contour_profil_2.BackgroundColor3 = Color3.new(1, 1, 1)
@@ -1951,6 +1953,53 @@ end)
 -- LocalScript
 task.spawn(function()
 	local script = local_script_7
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	local MPS = game:GetService("MarketplaceService");
+	local GPI = MPS.GetProductInfo;
+	
+	local function Info(Id)
+		return GPI(MPS, Id);
+	end;
+	
+	local function Time(Hour, Minute, Second, Day, Month, Year)
+		return os.time({
+			year = Year or os.date("%Y"), month = Month or os.date("%m"), day = Day or os.date("%d"),
+			hour = Hour or 0, min = Minute or 0, sec = Second or 0
+		});
+	end;
+	
+	local function ExtractTimeComponents(DateTime)
+		local Year, Month, Day, Hour, Minute, Second = string.match(DateTime, "([%w]+)%-([%w]+)%-([%w]+)T([%w]+):([%w]+):([%w]+)Z")
+		return {Year, Month, Day, Hour, Minute, Second};
+	end;
+	
+	local function UpdateCheck(ScriptLastUpdated)
+		local PI = Info(game.PlaceId);
+		local UP = PI.Updated;
+		local CO = ExtractTimeComponents(UP);
+		local SC = Time(unpack(ScriptLastUpdated));
+		local GA = Time(unpack(CO));
+		return (SC > GA);
+	end;
+	
+	if (UpdateCheck({18, 21, 00, 07, 10, 2022})) then
+		print("SCRIPT UP TO DATE");
+	else
+		print("SCRIPT OUT OF DATE - WAIT FOR UPDATE");
+	end;
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_8
 
 	local oldreq = require
 	local function require(target)
