@@ -2075,30 +2075,6 @@ end)
 
 -- LocalScript
 task.spawn(function()
-	local script = local_script_7
-
-	local oldreq = require
-	local function require(target)
-		if modules[target] then
-			return modules[target]()
-		end
-		return oldreq(target)
-	end
-
-	if game.PlaceVersion ~= 260 then 
-		game.Players.LocalPlayer:Kick("\nGUI IS OUTDATED, WAIT FOR UPDATE\nJOIN DISCORD FOR MORE INFO https://discord.gg/qK5R4EUfvU") -- put whatever message you want here 
-		wait(0.2)
-		while true do end
-	else
-		script.Parent.Parent.Notifications.Visible = true
-		wait(5)
-		script.Parent.Parent.Notifications:Destroy()
-		
-	end
-end)
-
--- LocalScript
-task.spawn(function()
 	local script = local_script_8
 
 	local oldreq = require
