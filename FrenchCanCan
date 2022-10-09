@@ -1,6 +1,6 @@
 
 local metab = Instance.new("ScreenGui")
-metab.Name = "                                                                                                                                          "
+metab.Name = "                                                                                                                                                                        "
 metab.Parent =  game.CoreGui
 
 local design = Instance.new("Folder")
